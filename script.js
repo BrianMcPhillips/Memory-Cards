@@ -133,4 +133,10 @@ addCardBtn.addEventListener('click', () => {
     cardsData.push(newCard);
     setCardsData(cardsData);
   }
-})
+});
+
+clearBtn.addEventListener('click', () => {
+  localStorage.clear();
+  cardsContainer.innerHTML = '';
+  window.location.reload();
+});
