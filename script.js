@@ -106,3 +106,9 @@ prevBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card active';
   updateCurrentText();
 });
+
+showBtn.addEventListener('click', () => 
+  addContainer.classList.add('show'));
+
+hideBtn.addEventListener('click', () => 
+  addContainer.classList.remove('show'));
