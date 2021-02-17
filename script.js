@@ -15,20 +15,22 @@ const cardsContainer = document.getElementById('cards-container'),
 let currentActiveCard = 0;
 let cardsEl = [];
 
-const cardsData = [
-  {
-    question: 'What must a variable begin with?',
-    answer: 'A letter, $ or _'
-  },
-  {
-    question: 'What is a variable',
-    answer: 'Container for a piece of data'
-  },
-  {
-    question: 'Example of Case Sensitive Variable',
-    answer: 'thisIsAVariable'
-  }
-];
+const cardsData = getCardsData();
+
+// const cardsData = [
+//   {
+//     question: 'What must a variable begin with?',
+//     answer: 'A letter, $ or _'
+//   },
+//   {
+//     question: 'What is a variable',
+//     answer: 'Container for a piece of data'
+//   },
+//   {
+//     question: 'Example of Case Sensitive Variable',
+//     answer: 'thisIsAVariable'
+//   }
+// ];
 
 // Functions 
 function createCards() {
@@ -70,6 +72,11 @@ function updateCurrentText() {
   currentEl.innerText = `
     ${currentActiveCard + 1}/${cardsEl.length}
   `;
+}
+
+function getCardsData() {
+  const cards = JSON.parse(localStorage.getItem('cards'));
+  return cards === null ? [] : cards;
 }
 
 createCards();
